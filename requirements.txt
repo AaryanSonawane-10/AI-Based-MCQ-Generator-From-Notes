@@ -1,0 +1,17 @@
+# UI
+streamlit>=1.40.0
+
+# LangChain framework layer + Gemini integration
+# (langchain-google-genai >= 4.0 uses the consolidated google-genai SDK)
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-google-genai>=4.0.0
+
+# Data validation / structured output schema
+pydantic>=2.7.0
+
+# PDF text extraction
+pypdf>=5.0.0
+
+# Loads GOOGLE_API_KEY from the .env file
+python-dotenv>=1.0.1
