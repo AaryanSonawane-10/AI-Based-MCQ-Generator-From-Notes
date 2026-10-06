@@ -211,8 +211,24 @@ if uploaded_file:
 # ---- Interactive quiz ----
 mcqs = st.session_state.mcqs
 if mcqs:
-    st.subheader("Generated MCQs")
 
+    # Download Button
+    mcq_text = ""
+
+    for i, q in enumerate(mcqs, start=1):
+        mcq_text += f"Q{i}. {q.question}\n"
+        for j, option in enumerate(q.options):
+            mcq_text += f"{chr(65+j)}. {option}\n"
+        mcq_text += f"Answer: {q.correct_answer}\n\n"
+
+    st.download_button(
+        label="📥 Download MCQs",
+        data=mcq_text,
+        file_name="generated_mcqs.txt",
+        mime="text/plain"
+    )
+
+    st.subheader("Generated MCQs")
     # A form means the page only reruns when "Submit Quiz" is pressed.
     with st.form("quiz_form"):
         answers = []
