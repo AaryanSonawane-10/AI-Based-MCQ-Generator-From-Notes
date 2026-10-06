@@ -31,7 +31,7 @@ API_KEY = os.getenv("GOOGLE_API_KEY", "").strip()
 
 # NOTE: Gemini 1.5 Flash has been retired by Google and its API calls now fail.
 # "gemini-2.5-flash" is its free-tier Flash successor. Change it via .env.
-MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-2.5-flash-lite").strip()
+MODEL_NAME = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite").strip()
 st.write("Model:", MODEL_NAME)
 # Limit the characters sent to the model to keep requests fast and in free quota.
 MAX_INPUT_CHARS = 30_000
